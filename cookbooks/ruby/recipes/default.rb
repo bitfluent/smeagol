@@ -51,6 +51,10 @@ template "#{ENV['HOME']}/Developer/.rvm/gemsets/default.gems" do
   source "default.gems.erb"
 end
 
+template "#{ENV['HOME']}/Developer/.rvm/gemsets/global.gems" do
+  source "global.gems.erb"
+end
+
 script "ensuring default rubygems are installed" do
   interpreter "bash"
   code <<-EOS
