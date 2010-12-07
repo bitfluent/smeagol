@@ -47,19 +47,15 @@ script "ensuring a default ruby is set" do
   EOS
 end
 
-template "#{ENV['HOME']}/Developer/.rvm/gemsets/default.gems" do
-  source "default.gems.erb"
-end
-
 template "#{ENV['HOME']}/Developer/.rvm/gemsets/global.gems" do
   source "global.gems.erb"
 end
 
-script "ensuring default rubygems are installed" do
+script "ensuring global rubygems are installed" do
   interpreter "bash"
   code <<-EOS
     source ~/.cinderella.profile
-    rvm gemset load ~/Developer/.rvm/gemsets/default.gems >> ~/.cinderella/ruby.log 2>&1
+    rvm gemset load ~/Developer/.rvm/gemsets/global.gems >> ~/.cinderella/ruby.log 2>&1
   EOS
 end
 
