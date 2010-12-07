@@ -55,7 +55,9 @@ script "ensuring global rubygems are installed" do
   interpreter "bash"
   code <<-EOS
     source ~/.cinderella.profile
-    rvm gemset load ~/Developer/.rvm/gemsets/global.gems >> ~/.cinderella/ruby.log 2>&1
+    rvm gemset use global
+    rvm gemset import ~/Developer/.rvm/gemsets/global.gems >> ~/.cinderella/ruby.log 2>&1
+    rvm gemset clear
   EOS
 end
 
