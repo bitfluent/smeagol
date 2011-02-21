@@ -20,6 +20,7 @@ script "configuring ndistro" do
   code <<-EOS
     source ~/.cinderella.profile
     cd #{ENV['HOME']}/Developer/bin
+    touch .ndistro
 
     curl -# -L http://github.com/visionmedia/ndistro/raw/master/bin/ndistro > ndistro 2> ~/.cinderella.log
     chmod 0755 ndistro
