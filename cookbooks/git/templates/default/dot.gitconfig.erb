@@ -34,6 +34,9 @@
   sh = !git-sh
   ro = !git fetch origin && git reset --hard origin/master
 
+[rerere]
+	enabled = 1
+
 <% if @email && @fullname %>
 [user]
   email = <%= @email %>
