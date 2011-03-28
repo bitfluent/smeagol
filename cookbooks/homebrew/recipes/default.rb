@@ -40,7 +40,7 @@ template "#{ENV['HOME']}/.cinderella.profile" do
   owner  ENV['USER']
   group  Etc.getgrgid(Process.gid).name
   source "dot.profile.erb"
-  variables({ :home => ENV['HOME'] })
+  variables({ :home => ENV['HOME'], :editor => ENV['EDITOR'] })
 end
 
 %w(bash_profile bashrc zshrc).each do |config_file|
