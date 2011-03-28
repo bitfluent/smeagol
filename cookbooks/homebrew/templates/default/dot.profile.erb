@@ -24,3 +24,7 @@ fi
 if [[ -f <%= @home %>/.cinderella.profile.custom ]]; then
   source ~/.cinderella.profile.custom
 fi
+
+if [[ -f <%= @home %>/Developer/etc/autojump ]]; then
+  source <%= @home %>/Developer/etc/autojump
+fi
