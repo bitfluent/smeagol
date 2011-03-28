@@ -17,13 +17,13 @@ script "installing rvm to ~/Developer" do
   EOS
 end
 
-script "updating rvm to the latest stable version" do
-  interpreter "bash"
-  code <<-EOS
-    source ~/.cinderella.profile
-    rvm update -—head >> ~/.cinderella/ruby.log 2>&1
-  EOS
-end
+# script "updating rvm to the latest stable version" do
+#   interpreter "bash"
+#   code <<-EOS
+#     source ~/.cinderella.profile
+#     rvm update -—head >> ~/.cinderella/ruby.log 2>&1
+#   EOS
+# end
 
 script "installing ruby" do
   interpreter "bash"
